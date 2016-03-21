@@ -10,6 +10,7 @@
   "moduleType": [],
   "dependencies": {
     "angular-animate": "^1.5.2",
-    "angularLocalStorage": "^0.3.2"
+    "angularLocalStorage": "^0.3.2",
+    "angular": "^1.5.2"
   }
 }
