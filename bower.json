@@ -1,0 +1,15 @@
+{
+  "name": "splitlater",
+  "description": "",
+  "main": "myApp.js",
+  "authors": [
+    "Naoto Ikuno <moon_in_france@yahoo.co.jp>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/pandanoir/splitlater",
+  "moduleType": [],
+  "dependencies": {
+    "angular-animate": "^1.5.2",
+    "angularLocalStorage": "^0.3.2"
+  }
+}

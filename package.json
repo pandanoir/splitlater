@@ -1,0 +1,14 @@
+{
+  "name": "splitlater",
+  "version": "0.0.1",
+  "description": "",
+  "main": "myApp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Naoto Ikuno <moon_in_france@yahoo.co.jp>",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "^1.7.7"
+  }
+}

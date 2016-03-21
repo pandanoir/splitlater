@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angularLocalStorage/dist/angularLocalStorage.min.js"></script>
+    <script src="myApp.js"></script>
+    <script src="controller.js"></script>
+    <title></title>
+    <style>
+      button {
+        background: #9cf;
+        border: 0;
+        padding: 4px 10px;
+        color: #333;
+        cursor: pointer;
+      }
+      textarea[readonly] {
+        color: #999;
+      }
+      .box {
+        position: relative;
+      }
+      .textarea {
+        transition: 0.5s linear all;
+        transform: rotateY(0);
+        transform-style: preserve-3d;
+        width: 300px;
+      }
+      .original, .translated {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background:#fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 294px;
+        padding: 2px;
+        border: 1px solid #000;
+        height: 50px;
+      }
+      .box button {
+        margin-top: 60px;
+      }
+      .translated {
+        transform: rotateY(180deg);
+      }
+      .textarea.turned {
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body ng-controller="mainController">
+    <button ng-click="split()">split</button>
+    <button ng-click="join()">join</button>
+    <button ng-click="lockAll()">lock all</button>
+    <button ng-click="save()">save</button>
+    <button ng-click="clear()">clear</button><br>
+    <div ng-repeat="paragraph in paragraphs" class="box">
+      <div class="textarea" ng-class="{turned: isTurned[$index]}">
+        <textarea class="original" id="original{{$index}}"
+          ng-model="paragraph.original"></textarea>
+        <textarea class="translated" id="translated{{$index}}"
+          ng-model="paragraph.translated"></textarea>
+      </div>
+
+      <button ng-click="turn($index)">turn</button>
+      <button ng-if="isLocked[$index]" ng-click="unlock($index)">unlock</button>
+      <button ng-if="!isLocked[$index]" ng-click="lock($index)">lock</button><br>
+    </div>
+    <textarea ng-if="joinedOriginal!==''" rows="10" ng-model="joinedOriginal"></textarea>
+    <textarea ng-if="joinedOriginal!==''" rows="10" ng-model="joinedTranslated"></textarea>
+  </body>
+</html>
