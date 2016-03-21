@@ -63,6 +63,7 @@
     <div ng-repeat="paragraph in paragraphs" class="box">
       <div class="textarea" ng-class="{turned: isTurned[$index]}">
         <textarea class="original" id="original{{$index}}"
+          ng-readonly="isLocked[$index]"
           ng-model="paragraph.original"></textarea>
         <textarea class="translated" id="translated{{$index}}"
           ng-model="paragraph.translated"></textarea>
